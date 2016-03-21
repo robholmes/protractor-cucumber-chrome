@@ -1,6 +1,6 @@
 FROM node:slim
 
-MAINTAINER Rob Holmes <https://github.com/robholmes>
+MAINTAINER i6 Dev Team <dev-team@i6.io>
 
 WORKDIR /tmp
 
@@ -17,3 +17,5 @@ RUN npm install -g protractor@3.1.1 cucumber@0.9.1 chai chai-as-promised protrac
     cd /protractor
 
 WORKDIR /protractor
+
+ENV NODE_PATH /usr/local/lib/node_modules
