@@ -8,10 +8,11 @@ RUN npm install -g protractor@3.1.1 cucumber@0.9.1 chai chai-as-promised protrac
     webdriver-manager update && \
     apt-get update && \
     apt-get install -y xvfb wget curl openjdk-7-jre && \
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     curl -L -o google-chrome.deb https://s3.amazonaws.com/circle-downloads/google-chrome-stable_current_amd64_47.0.2526.73-1.deb && \
-    sudo dpkg -i google-chrome.deb && \
-    sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome && \
+    dpkg -i google-chrome.deb && \
+    sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome && \
+    apt-get clean && \
     rm google-chrome.deb && \
     mkdir /protractor && \
     cd /protractor
