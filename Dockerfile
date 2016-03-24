@@ -4,7 +4,7 @@ MAINTAINER i6 Dev Team <dev-team@i6.io>
 
 WORKDIR /tmp
 
-RUN npm install -g protractor@3.1.1 cucumber@0.9.1 chai chai-as-promised protractor-cucumber-framework protractor-cucumber-junit dateformat && \
+RUN npm install -g protractor@3.1.1 cucumber@0.9.1 chai chai-as-promised protractor-cucumber-framework cucumber-junit dateformat && \
     webdriver-manager update && \
     apt-get update && \
     apt-get install -y xvfb wget curl openjdk-7-jre gconf-service libgconf-2-4 libnspr4 libnss3 libpango1.0-0 libappindicator1 libcurl3 libxss1 fonts-liberation xdg-utils && \
